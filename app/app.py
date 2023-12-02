@@ -15,6 +15,7 @@ app.route("/dashboard", methods=["POST"])(dashboard_controller.select_quiz)
 
 # Quiz routes
 app.route("/quiz")(quiz_controller.show_quiz_page)
+app.route("/quiz", methods=["POST"])(quiz_controller.show_quiz_result)
 
 
 if __name__ == '__main__':
