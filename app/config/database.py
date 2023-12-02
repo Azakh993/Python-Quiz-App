@@ -1,5 +1,4 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
 DB = 'postgresql'
 DB_USER = 'adm1n'
@@ -10,6 +9,3 @@ DB_PORT = '5432'
 
 sqlalchemy_db_uri = f'{DB}://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
 engine = create_engine(sqlalchemy_db_uri)
-
-Session = sessionmaker(bind=engine)
-session = Session()
