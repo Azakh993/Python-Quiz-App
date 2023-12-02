@@ -1,7 +1,6 @@
+from . import Base
 from sqlalchemy import Column, Integer, VARCHAR
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from sqlalchemy.orm import relationship
 
 
 class User(Base):
@@ -11,3 +10,4 @@ class User(Base):
     username = Column(VARCHAR, unique=True, nullable=False)
     password = Column(VARCHAR, unique=False, nullable=False)
 
+    results = relationship('Result', back_populates='user')
