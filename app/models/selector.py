@@ -1,9 +1,7 @@
 from . import Base
-from sqlalchemy import Column, Integer, ForeignKey
+from sqlalchemy import Column, Integer, ForeignKey, Table
 
-
-class Selector(Base):
-    __tablename__ = 'selector'
-
-    quiz_id = Column('quiz_id', Integer, ForeignKey('quizzes.id'))
-    question_id = Column('question_id', Integer, ForeignKey('questions.id'))
+selector = Table('selector', Base.metadata,
+                 Column('quiz_id', Integer, ForeignKey('quizzes.id'), primary_key=True),
+                 Column('question_id', Integer, ForeignKey('questions.id'), primary_key=True)
+                 )
