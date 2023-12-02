@@ -10,8 +10,8 @@
     <body>
         <h1>{{ subject }}</h1>
 
-        {% if 1 == 0 %}
-        <h2> Your score is: " + " points.</h2>
+        {% if points is not none %}
+        <h2> Your score is: {{ points }} points.</h2>
         {% endif %}
 
         <form action="" method="POST">
