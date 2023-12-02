@@ -11,6 +11,10 @@ app.route("/login", methods=["POST"])(login_controller.login)
 
 # Dashboard routes
 app.route("/dashboard")(dashboard_controller.show_dashboard_page)
+app.route("/dashboard", methods=["POST"])(dashboard_controller.select_quiz)
+
+# Quiz routes
+app.route("/quiz")(quiz_controller.show_quiz_page)
 
 
 if __name__ == '__main__':
