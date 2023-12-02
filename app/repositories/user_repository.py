@@ -1,5 +1,5 @@
 from app.models.user import User
-from app.config.database import session
+from . import session
 
 
 def get_user_by_username(username):
