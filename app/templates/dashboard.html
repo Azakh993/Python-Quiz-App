@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <title>Dashboard Page</title>
 </head>
 <body>
-<span>Login Success!</span>
+<div class="container">
+    <h1>Quiz Dashboard</h1>
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>Previous Result</th>
+    </tr>
+
+    {% for quiz, score in quizzes_and_results_dict.items() %}
+        <tr>
+        <td>
+            {{ quiz.subject }}
+            <form action="" method="POST">
+                <input type="hidden" name="quiz_id" value="{{ quiz.id }}">
+                <input type="submit" value="Take Quiz">
+            </form>
+        </td>
+        <td>
+            {{ "Not Attempted" if score is none else score }}
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+</div>
 </body>
 </html>
