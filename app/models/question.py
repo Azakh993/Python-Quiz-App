@@ -12,5 +12,4 @@ class Question(Base):
     options = Column(VARCHAR, nullable=False)
     answer = Column(VARCHAR, nullable=False)
 
-    quizzes = relationship('Quiz', secondary=selector)
-
+    quizzes = relationship('Quiz', secondary='selector', back_populates='questions')
