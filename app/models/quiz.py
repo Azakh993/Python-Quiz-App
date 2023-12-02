@@ -10,5 +10,5 @@ class Quiz(Base):
     id = Column(Integer, primary_key=True)
     subject = Column(VARCHAR, unique=True, nullable=False)
 
-    questions = relationship('Question', secondary=selector)
+    questions = relationship('Question', secondary=selector, back_populates='quizzes')
     results = relationship('Result', back_populates='quiz')
