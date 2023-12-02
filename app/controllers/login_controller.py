@@ -3,6 +3,7 @@ from app.services.authentication_service import authenticate_user
 
 
 def show_login_page():
+    session.clear()
     return render_template("login.html")
 
 
