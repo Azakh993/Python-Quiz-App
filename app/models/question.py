@@ -1,7 +1,7 @@
 from . import Base
-
 from sqlalchemy import Column, Integer, VARCHAR
 from sqlalchemy.orm import relationship
+from .selector import selector
 
 
 class Question(Base):
@@ -12,6 +12,5 @@ class Question(Base):
     options = Column(VARCHAR, nullable=False)
     answer = Column(VARCHAR, nullable=False)
 
-    quizzes = relationship('Quiz', secondary='selector')
-
+    quizzes = relationship('Quiz', secondary=selector)
 
