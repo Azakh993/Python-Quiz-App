@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+        <title>Quiz Page</title>
+    </head>
 
-</body>
+    <body>
+        <h1>{{ subject }}</h1>
+
+        {% if 1 == 0 %}
+        <h2> Your score is: " + " points.</h2>" %>
+        {% endif %}
+
+        <form action="" method="POST">
+            {% for question in questions %}
+            <div class="question">
+                <p><strong> {{ question.text }}</strong></p>
+                <ul class="answers">
+                    {% for option in question.options %}
+                    <li>
+                        <label>
+                            <input type="radio" name="question{{ question.id }}" value="option{{  option }}">{{ option }}
+                        </label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+            <input type="submit" value="Submit Quiz">
+        </form>
+        <form action="" method="post">
+            <input type="submit" name="exit" value="Return to Dashboard">
+        </form>
+    </body>
 </html>
