@@ -13,3 +13,12 @@ def get_questions(quiz_id):
         print(f'Error: {str(exception)}')
         session.rollback()
         raise
+
+
+def get_question(question_id):
+    try:
+        return session.query(Question).filter_by(id=question_id).first()
+    except Exception as exception:
+        print(f'Error: {str(exception)}')
+        session.rollback()
+        raise
