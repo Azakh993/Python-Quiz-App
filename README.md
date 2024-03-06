@@ -1,5 +1,5 @@
 # Python Quiz App
-Welcome to the Python Quiz App! This web-based application allows users to participate in quizzes on various topics. 
+Welcome to the Python Quiz App; my first Python based project! This web-based application allows users to participate in quizzes on various topics. 
 
 ## Overview
 The Python Quiz App follows a layered architecture pattern to ensure separation of concerns and maintainability. Here's an overview of each layer:
